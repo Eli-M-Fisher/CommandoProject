@@ -13,6 +13,14 @@ public class Weapon
 
     public void Shoot()
     {
-        // TODO: Decrease bullet count and print shooting message
+        if (BulletCount > 0)
+        {
+            BulletCount--;
+            Console.WriteLine($"{Name} fired a shot! Bullets left: {BulletCount}");
+        }
+        else
+        {
+            Console.WriteLine($"{Name} is out of bullets!");
+        }
     }
 }
