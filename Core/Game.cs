@@ -75,12 +75,21 @@ public class Game
     private void RunEnemyDemo()
     {
         Console.WriteLine("=== Enemy Demo ===");
-        Enemy enemy1 = enemyFactory.CreateEnemy("Enemy One");
-        Enemy enemy2 = enemyFactory.CreateEnemy("Enemy Two");
 
-        enemy1.Shout();
-        enemy2.Shout();
+        List<Enemy> enemies = new List<Enemy>
+        {
+            enemyFactory.CreateEnemy("Enemy One"),
+            enemyFactory.CreateEnemy("Enemy Two")
+        };
 
-        Console.WriteLine($"Total enemies created: {enemyFactory.GetAllEnemies().Count}\n");
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Enemy enemy = enemies[i];
+            Console.WriteLine($"\n>> Enemy #{i + 1}: {enemy.Name} | Status: {(enemy.IsAlive ? "Alive" : "Dead")}");
+            Console.WriteLine("Shouting:");
+            enemy.Shout();
+        }
+
+        Console.WriteLine($"\nTotal enemies created: {enemyFactory.GetAllEnemies().Count}\n");
     }
 }
