@@ -29,5 +29,14 @@ class Program
             Console.WriteLine($"Calling Attack() on: {c.GetType().Name}");
             c.Attack();
         }
+        // Enemy and EnemyFactory test
+        EnemyFactory enemyFactory = new EnemyFactory();
+        Enemy enemy1 = enemyFactory.CreateEnemy("Enemy One");
+        Enemy enemy2 = enemyFactory.CreateEnemy("Enemy Two");
+
+        enemy1.Shout();
+        enemy2.Shout();
+
+        Console.WriteLine($"Total enemies created: {enemyFactory.GetAllEnemies().Count}");
     }
 }
