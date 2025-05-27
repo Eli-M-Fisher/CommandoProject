@@ -26,6 +26,7 @@ class Program
         Commando[] commandos = new Commando[] { commando, airCommando, seaCommando };
         foreach (Commando c in commandos)
         {
+            Console.WriteLine($"Calling Attack() on: {c.GetType().Name}");
             c.Attack();
         }
     }
