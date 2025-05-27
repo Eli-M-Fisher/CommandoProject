@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 class Program
@@ -17,5 +16,17 @@ class Program
         Console.WriteLine("SayName for GENERAL: " + commando.SayName("GENERAL"));
         Console.WriteLine("SayName for COLONEL: " + commando.SayName("COLONEL"));
         Console.WriteLine("SayName for CAPTAIN: " + commando.SayName("CAPTAIN"));
+
+        AirCommando airCommando = new AirCommando("James Blaze", "Falcon");
+        SeaCommando seaCommando = new SeaCommando("Mark Tide", "Shark");
+
+        airCommando.Parachute();
+        seaCommando.Swim();
+
+        Commando[] commandos = new Commando[] { commando, airCommando, seaCommando };
+        foreach (Commando c in commandos)
+        {
+            c.Attack();
+        }
     }
 }
