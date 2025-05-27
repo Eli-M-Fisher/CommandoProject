@@ -1,5 +1,3 @@
-
-
 using System;
 
 public class Game
@@ -19,55 +17,79 @@ public class Game
 
     public void Start()
     {
-        Console.WriteLine("Game started...\n");
+        Console.WriteLine("=== GAME SIMULATION START ===\n");
 
+        RunEnemyDemo();
         RunCommandoDemo();
         RunWeaponDemo();
         RunBreakableDemo();
-        RunEnemyDemo();
+
+        Console.WriteLine("=== GAME SIMULATION END ===");
     }
 
     private void RunCommandoDemo()
     {
         Console.WriteLine("=== Commando Demo ===");
+
         Commando regular = commandoFactory.CreateCommando("Alex Stone", "Shadow", "regular");
         Commando air = commandoFactory.CreateCommando("Liam Sky", "Falcon", "air");
         Commando sea = commandoFactory.CreateCommando("Noah Wave", "Shark", "sea");
 
-        foreach (Commando cmd in commandoFactory.GetAllCommandos())
+        var allCommandos = commandoFactory.GetAllCommandos();
+
+        for (int i = 0; i < allCommandos.Count; i++)
         {
-            Console.WriteLine($"Commando created: {cmd.CodeName} ({cmd.GetType().Name})");
+            var cmd = allCommandos[i];
+            Console.WriteLine($"\n>> Commando #{i + 1}: {cmd.CodeName}");
+            Console.WriteLine($"Type: {cmd.GetType().Name}");
+            Console.WriteLine("Action:");
             cmd.Attack();
         }
 
-        Console.WriteLine();
+        Console.WriteLine($"\nTotal commandos created: {allCommandos.Count}\n");
     }
 
     private void RunWeaponDemo()
     {
         Console.WriteLine("=== Weapon Demo ===");
+
         Weapon m16 = weaponFactory.CreateWeapon("M16");
         Weapon ak47 = weaponFactory.CreateWeapon("AK47");
 
-        m16.Shoot();
-        ak47.Shoot();
+        List<Weapon> allWeapons = weaponFactory.GetAllWeapons();
 
-        foreach (Weapon wp in weaponFactory.GetAllWeapons())
+        for (int i = 0; i < allWeapons.Count; i++)
         {
-            Console.WriteLine($"Weapon: {wp.Name}, Bullets: {wp.BulletCount}");
+            var weapon = allWeapons[i];
+            Console.WriteLine($"\n>> Weapon #{i + 1}: {weapon.Name} ({weapon.Manufacturer})");
+            Console.WriteLine("Action: Shooting...");
+            weapon.Shoot();
+            Console.WriteLine($"Remaining bullets: {weapon.BulletCount}");
         }
 
-        Console.WriteLine();
+        Console.WriteLine($"\nTotal weapons created: {allWeapons.Count}\n");
     }
 
     private void RunBreakableDemo()
     {
         Console.WriteLine("=== Breakable Demo ===");
+
         IBreakable stone = breakableFactory.CreateBreakable("stone");
         IBreakable knife = breakableFactory.CreateBreakable("knife");
 
-        for (int i = 0; i < 6; i++) stone.Hit();
-        for (int i = 0; i < 11; i++) knife.Hit();
+        Console.WriteLine("\n-- Testing Stone: Heavy Stone --");
+        for (int i = 1; i <= 6; i++)
+        {
+            Console.Write($"[{i}/5] ");
+            stone.Hit();
+        }
+
+        Console.WriteLine("\n-- Testing Knife: Combat Knife --");
+        for (int i = 1; i <= 11; i++)
+        {
+            Console.Write($"[{i}/10] ");
+            knife.Hit();
+        }
 
         Console.WriteLine();
     }
@@ -75,12 +97,21 @@ public class Game
     private void RunEnemyDemo()
     {
         Console.WriteLine("=== Enemy Demo ===");
-        Enemy enemy1 = enemyFactory.CreateEnemy("Enemy One");
-        Enemy enemy2 = enemyFactory.CreateEnemy("Enemy Two");
 
-        enemy1.Shout();
-        enemy2.Shout();
+        List<Enemy> enemies = new List<Enemy>
+        {
+            enemyFactory.CreateEnemy("Enemy One"),
+            enemyFactory.CreateEnemy("Enemy Two")
+        };
 
-        Console.WriteLine($"Total enemies created: {enemyFactory.GetAllEnemies().Count}\n");
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Enemy enemy = enemies[i];
+            Console.WriteLine($"\n>> Enemy #{i + 1}: {enemy.Name} | Status: {(enemy.IsAlive ? "Alive" : "Dead")}");
+            Console.WriteLine("Shouting:");
+            enemy.Shout();
+        }
+
+        Console.WriteLine($"\nTotal enemies created: {enemyFactory.GetAllEnemies().Count}\n");
     }
 }
