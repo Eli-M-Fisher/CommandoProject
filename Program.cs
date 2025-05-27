@@ -64,9 +64,10 @@ class Program
         {
             Console.WriteLine($"Weapon created: {wp.Name} ({wp.Manufacturer}) with {wp.BulletCount} bullets");
         }
-        // IBreakable weapons test
-        Stone stone = new Stone("Heavy Stone", 2.5, "Gray");
-        Knife knife = new Knife("Combat Knife", "Steel", "SharpEdge", "Black", 0.8);
+        // IBreakable weapons test using BreakableFactory
+        BreakableFactory breakableFactory = new BreakableFactory();
+        IBreakable stone = breakableFactory.CreateBreakable("stone");
+        IBreakable knife = breakableFactory.CreateBreakable("knife");
 
         for (int i = 0; i < 6; i++)
         {
