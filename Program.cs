@@ -13,5 +13,9 @@ class Program
 
         Weapon weapon = new Weapon("Rifle", "MilTech", 30);
         Console.WriteLine($"Weapon: {weapon.Name} by {weapon.Manufacturer} with {weapon.BulletCount} bullets");
+
+        Console.WriteLine("SayName for GENERAL: " + commando.SayName("GENERAL"));
+        Console.WriteLine("SayName for COLONEL: " + commando.SayName("COLONEL"));
+        Console.WriteLine("SayName for CAPTAIN: " + commando.SayName("CAPTAIN"));
     }
 }

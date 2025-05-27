@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CommandoProject")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82627b90a38871b742f202a039b940b5f1d17498")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+183f208c5aa593665149f39027a492362a80d46c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CommandoProject")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CommandoProject")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
