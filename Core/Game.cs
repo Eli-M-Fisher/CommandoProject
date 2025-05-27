@@ -52,18 +52,22 @@ public class Game
     private void RunWeaponDemo()
     {
         Console.WriteLine("=== Weapon Demo ===");
+
         Weapon m16 = weaponFactory.CreateWeapon("M16");
         Weapon ak47 = weaponFactory.CreateWeapon("AK47");
 
-        m16.Shoot();
-        ak47.Shoot();
+        List<Weapon> allWeapons = weaponFactory.GetAllWeapons();
 
-        foreach (Weapon wp in weaponFactory.GetAllWeapons())
+        for (int i = 0; i < allWeapons.Count; i++)
         {
-            Console.WriteLine($"Weapon: {wp.Name}, Bullets: {wp.BulletCount}");
+            var weapon = allWeapons[i];
+            Console.WriteLine($"\n>> Weapon #{i + 1}: {weapon.Name} ({weapon.Manufacturer})");
+            Console.WriteLine("Action: Shooting...");
+            weapon.Shoot();
+            Console.WriteLine($"Remaining bullets: {weapon.BulletCount}");
         }
 
-        Console.WriteLine();
+        Console.WriteLine($"\nTotal weapons created: {allWeapons.Count}\n");
     }
 
     private void RunBreakableDemo()
