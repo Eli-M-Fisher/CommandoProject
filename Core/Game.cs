@@ -30,17 +30,23 @@ public class Game
     private void RunCommandoDemo()
     {
         Console.WriteLine("=== Commando Demo ===");
+
         Commando regular = commandoFactory.CreateCommando("Alex Stone", "Shadow", "regular");
         Commando air = commandoFactory.CreateCommando("Liam Sky", "Falcon", "air");
         Commando sea = commandoFactory.CreateCommando("Noah Wave", "Shark", "sea");
 
-        foreach (Commando cmd in commandoFactory.GetAllCommandos())
+        var allCommandos = commandoFactory.GetAllCommandos();
+
+        for (int i = 0; i < allCommandos.Count; i++)
         {
-            Console.WriteLine($"Commando created: {cmd.CodeName} ({cmd.GetType().Name})");
+            var cmd = allCommandos[i];
+            Console.WriteLine($"\n>> Commando #{i + 1}: {cmd.CodeName}");
+            Console.WriteLine($"Type: {cmd.GetType().Name}");
+            Console.WriteLine("Action:");
             cmd.Attack();
         }
 
-        Console.WriteLine();
+        Console.WriteLine($"\nTotal commandos created: {allCommandos.Count}\n");
     }
 
     private void RunWeaponDemo()
