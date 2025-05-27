@@ -1,5 +1,3 @@
-
-
 using System;
 
 public class Game
@@ -19,12 +17,14 @@ public class Game
 
     public void Start()
     {
-        Console.WriteLine("Game started...\n");
+        Console.WriteLine("=== GAME SIMULATION START ===\n");
 
+        RunEnemyDemo();
         RunCommandoDemo();
         RunWeaponDemo();
         RunBreakableDemo();
-        RunEnemyDemo();
+
+        Console.WriteLine("=== GAME SIMULATION END ===");
     }
 
     private void RunCommandoDemo()
