@@ -50,5 +50,19 @@ class Program
         {
             Console.WriteLine($"Commando created: {cmd.CodeName} ({cmd.GetType().Name})");
         }
+
+        // WeaponFactory test
+        WeaponFactory weaponFactory = new WeaponFactory();
+        Weapon m16 = weaponFactory.CreateWeapon("M16");
+        Weapon ak47 = weaponFactory.CreateWeapon("AK47");
+
+        m16.Shoot();
+        ak47.Shoot();
+
+        Console.WriteLine($"Total weapons created: {weaponFactory.GetAllWeapons().Count}");
+        foreach (Weapon wp in weaponFactory.GetAllWeapons())
+        {
+            Console.WriteLine($"Weapon created: {wp.Name} ({wp.Manufacturer}) with {wp.BulletCount} bullets");
+        }
     }
 }
