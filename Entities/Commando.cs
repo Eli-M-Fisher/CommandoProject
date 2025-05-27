@@ -36,4 +36,20 @@ public class Commando
     {
         Console.WriteLine($"Commando {CodeName} is attacking!");
     }
+
+    public string SayName(string commanderRank)
+    {
+        if (commanderRank == "GENERAL")
+        {
+            return name;
+        }
+        else if (commanderRank == "COLONEL")
+        {
+            return CodeName;
+        }
+        else
+        {
+            return "Access denied. Classified information.";
+        }
+    }
 }
