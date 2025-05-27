@@ -1,5 +1,3 @@
-
-
 public enum CommandoStatus
 {
     Standing,
@@ -24,16 +22,18 @@ public class Commando
 
     public void Walk()
     {
-        // TODO: Set status and print walking
+        Status = CommandoStatus.Walking;
+        Console.WriteLine($"{CodeName} is walking.");
     }
 
     public void Hide()
     {
-        // TODO: Set status and print hiding
+        Status = CommandoStatus.Hiding;
+        Console.WriteLine($"{CodeName} is hiding.");
     }
 
     public virtual void Attack()
     {
-        // TODO: Print attack message
+        Console.WriteLine($"Commando {CodeName} is attacking!");
     }
 }
