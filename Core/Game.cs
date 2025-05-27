@@ -73,11 +73,23 @@ public class Game
     private void RunBreakableDemo()
     {
         Console.WriteLine("=== Breakable Demo ===");
+
         IBreakable stone = breakableFactory.CreateBreakable("stone");
         IBreakable knife = breakableFactory.CreateBreakable("knife");
 
-        for (int i = 0; i < 6; i++) stone.Hit();
-        for (int i = 0; i < 11; i++) knife.Hit();
+        Console.WriteLine("\n-- Testing Stone: Heavy Stone --");
+        for (int i = 1; i <= 6; i++)
+        {
+            Console.Write($"[{i}/5] ");
+            stone.Hit();
+        }
+
+        Console.WriteLine("\n-- Testing Knife: Combat Knife --");
+        for (int i = 1; i <= 11; i++)
+        {
+            Console.Write($"[{i}/10] ");
+            knife.Hit();
+        }
 
         Console.WriteLine();
     }
