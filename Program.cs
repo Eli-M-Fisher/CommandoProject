@@ -38,5 +38,17 @@ class Program
         enemy2.Shout();
 
         Console.WriteLine($"Total enemies created: {enemyFactory.GetAllEnemies().Count}");
+
+        // CommandoFactory test
+        CommandoFactory commandoFactory = new CommandoFactory();
+        Commando regular = commandoFactory.CreateCommando("Alex Stone", "Shadow", "regular");
+        Commando air = commandoFactory.CreateCommando("Liam Sky", "Falcon", "air");
+        Commando sea = commandoFactory.CreateCommando("Noah Wave", "Shark", "sea");
+
+        Console.WriteLine($"Total commandos created: {commandoFactory.GetAllCommandos().Count}");
+        foreach (Commando cmd in commandoFactory.GetAllCommandos())
+        {
+            Console.WriteLine($"Commando created: {cmd.CodeName} ({cmd.GetType().Name})");
+        }
     }
 }
