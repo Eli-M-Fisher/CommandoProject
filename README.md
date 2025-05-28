@@ -28,7 +28,3 @@ dotnet run
 
 All output is shown in the console.
 
-## Notes
-
-Created with Visual Studio Code on macOS.
-Organized and written in a clear way for learning and easy expansion.
