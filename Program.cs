@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
+using CommandoProject.Services;
 
 class Program
 {
@@ -9,5 +10,6 @@ class Program
         string[] scenarioLines = CommandoProject.Input.ScenarioLoader.LoadScenario("scenario.txt");
         Game game = new Game(scenarioLines);
         await game.Start();
+        await CommandoProject.Services.IntelClient.PrintIntelAsync();
     }
 }
