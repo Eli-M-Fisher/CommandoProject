@@ -1,4 +1,5 @@
 using System;
+using CommandoProject.Utils;
 
 public class AirCommando : Commando
 {
@@ -15,5 +16,6 @@ public class AirCommando : Commando
     public override void Attack()
     {
         Console.WriteLine($"Air Commando {CodeName} is attacking from the air!");
+        Logger.Log($"Air Commando {CodeName} attacked from the air.");
     }
 }

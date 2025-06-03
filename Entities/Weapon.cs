@@ -1,3 +1,4 @@
+using CommandoProject.Utils;
 public class Weapon
 {
     public string Name { get; set; }
@@ -17,10 +18,12 @@ public class Weapon
         {
             BulletCount--;
             Console.WriteLine($"{Name} fired a shot! Bullets left: {BulletCount}");
+            Logger.Log($"{Name} fired a shot! Bullets left: {BulletCount}");
         }
         else
         {
             Console.WriteLine($"{Name} is out of bullets!");
+            Logger.Log($"{Name} is out of bullets!");
         }
     }
 }
