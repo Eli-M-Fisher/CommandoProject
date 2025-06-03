@@ -1,3 +1,4 @@
+using CommandoProject.Utils;
 public enum CommandoStatus
 {
     Standing,
@@ -35,6 +36,7 @@ public class Commando
     public virtual void Attack()
     {
         Console.WriteLine($"Commando {CodeName} is attacking!");
+        Logger.Log($"Commando {CodeName} is attacking.");
     }
 
     public string SayName(string commanderRank)

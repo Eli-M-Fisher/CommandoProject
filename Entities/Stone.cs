@@ -1,5 +1,7 @@
 
 
+using CommandoProject.Utils;
+
 using System;
 
 public class Stone : IBreakable
@@ -27,6 +29,7 @@ public class Stone : IBreakable
         if (Status == "Broken")
         {
             Console.WriteLine($"{Name} is already broken.");
+            Logger.Log($"{Name} is already broken.");
             return;
         }
 
@@ -36,10 +39,12 @@ public class Stone : IBreakable
         {
             Status = "Broken";
             Console.WriteLine($"{Name} has broken!");
+            Logger.Log($"{Name} has broken!");
         }
         else
         {
             Console.WriteLine($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
+            Logger.Log($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
         }
     }
 }

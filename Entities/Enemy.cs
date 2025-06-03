@@ -1,4 +1,5 @@
 using System;
+using CommandoProject.Utils;
 
 public class Enemy
 {
@@ -10,10 +11,12 @@ public class Enemy
     {
         Name = name;
         Health = 100;
+        Logger.Log($"Enemy created: {Name} with {Health} health.");
     }
 
     public void Shout()
     {
         Console.WriteLine("I am the enemy!!!");
+        Logger.Log($"Enemy {Name} shouted.");
     }
 }
