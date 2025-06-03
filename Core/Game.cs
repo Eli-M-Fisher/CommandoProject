@@ -1,4 +1,7 @@
 using System;
+using System.Threading.Tasks;
+using CommandoProject.Services;
+using CommandoProject.Utils;
 
 public class Game
 {
@@ -15,7 +18,7 @@ public class Game
         enemyFactory = new EnemyFactory();
     }
 
-    public void Start()
+    public async Task Start()
     {
         Console.WriteLine("=== GAME SIMULATION START ===\n");
 
@@ -24,7 +27,9 @@ public class Game
         RunWeaponDemo();
         RunBreakableDemo();
 
-        Console.WriteLine("=== GAME SIMULATION END ===");
+        Console.WriteLine("=== GAME SIMULATION END ===\n");
+
+        await HttpLogger.LogAsync("📡 Simulation ended — log transmitted.");
     }
 
     private void RunCommandoDemo()
