@@ -5,13 +5,16 @@ using CommandoProject.Utils;
 
 public class Game
 {
+    private string[] scenarioLines;
+
     private CommandoFactory commandoFactory;
     private WeaponFactory weaponFactory;
     private BreakableFactory breakableFactory;
     private EnemyFactory enemyFactory;
 
-    public Game()
+    public Game(string[] scenarioLines)
     {
+        this.scenarioLines = scenarioLines;
         commandoFactory = new CommandoFactory();
         weaponFactory = new WeaponFactory();
         breakableFactory = new BreakableFactory();
