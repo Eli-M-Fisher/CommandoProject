@@ -12,13 +12,13 @@ public class Enemy
         Name = name;
         Health = 100;
         Logger.Log($"Enemy created: {Name} with {Health} health.");
-        HttpLogger.LogAsync($"Enemy created: {Name} with {Health} health.").Wait();
+        FileLogger.LogAsync($"Enemy created: {Name} with {Health} health.").Wait();
     }
 
     public void Shout()
     {
         Console.WriteLine("I am the enemy!!!");
         Logger.Log($"Enemy {Name} shouted.");
-        HttpLogger.LogAsync($"Enemy {Name} shouted.").Wait();
+        FileLogger.LogAsync($"Enemy {Name} shouted.").Wait();
     }
 }

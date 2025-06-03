@@ -1,11 +1,12 @@
-﻿using System;
+﻿using System.Threading.Tasks;
+using System;
 using System.Collections.Generic;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         Game game = new Game();
-        game.Start();
+        await game.Start();
     }
 }

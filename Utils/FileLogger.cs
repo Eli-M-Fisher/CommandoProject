@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommandoProject.Utils
 {
-    public static class HttpLogger
+    public static class FileLogger
     {
         private static readonly HttpClient httpClient = new HttpClient();
         private static readonly string endpointUrl = "https://api-kodkod.onrender.com/log"; // לדוגמה
