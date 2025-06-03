@@ -1,3 +1,4 @@
+using CommandoProject.Utils;
 using System;
 
 public class Game
@@ -24,6 +25,7 @@ public class Game
         RunWeaponDemo();
         RunBreakableDemo();
 
+        HttpLogger.LogAsync("Game finished successfully.").Wait();
         Console.WriteLine("=== GAME SIMULATION END ===");
     }
 
