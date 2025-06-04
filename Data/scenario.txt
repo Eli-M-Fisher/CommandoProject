@@ -1,5 +1,0 @@
-Commando: regular, Alex Stone, Shadow
-Commando: air, Liam Sky, Falcon
-Commando: sea, Noah Wave, Shark
-Enemy: Enemy One
-Enemy: Enemy Two

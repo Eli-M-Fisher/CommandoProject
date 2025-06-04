@@ -1,24 +1,25 @@
 using System;
 using CommandoProject.Utils;
 
-public class Enemy
+namespace CommandoProject.Entities
 {
-    public string Name { get; private set; }
-    public int Health { get; private set; }
-    public bool IsAlive => Health > 0;
-
-    public Enemy(string name)
+    public class Enemy
     {
-        Name = name;
-        Health = 100;
-        Logger.Log($"Enemy created: {Name} with {Health} health.");
-        FileLogger.LogAsync($"Enemy created: {Name} with {Health} health.").Wait();
-    }
+        public string Name { get; private set; }
+        public int Health { get; private set; }
+        public bool IsAlive => Health > 0;
 
-    public void Shout()
-    {
-        Console.WriteLine("I am the enemy!!!");
-        Logger.Log($"Enemy {Name} shouted.");
-        FileLogger.LogAsync($"Enemy {Name} shouted.").Wait();
+        public Enemy(string name)
+        {
+            Name = name;
+            Health = 100;
+            Logger.Log($"Enemy created: {Name} with {Health} health.");
+        }
+
+        public void Shout()
+        {
+            Console.WriteLine("I am the enemy!!!");
+            Logger.Log($"Enemy {Name} shouted.");
+        }
     }
 }

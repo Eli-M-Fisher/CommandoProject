@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 
+namespace CommandoProject.Entities
+{
 public interface ICommandoCreator
 {
     Commando Create(string name, string codeName);
@@ -52,4 +54,5 @@ public class CommandoFactory
     {
         return commandos;
     }
+}
 }

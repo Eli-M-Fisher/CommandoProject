@@ -1,26 +1,2 @@
-[2025-06-03 09:56:29] Enemy created: Enemy One with 100 health.
-[2025-06-03 09:56:29] Enemy created: Enemy Two with 100 health.
-[2025-06-03 09:56:29] Enemy Enemy One shouted.
-[2025-06-03 09:56:30] Enemy Enemy Two shouted.
-[2025-06-03 09:56:30] Commando Shadow is attacking.
-[2025-06-03 09:56:30] Air Commando Falcon attacked from the air.
-[2025-06-03 09:56:30] Sea Commando Shark attacked from the sea.
-[2025-06-03 09:56:30] M16 fired a shot! Bullets left: 28
-[2025-06-03 09:56:30] AK47 fired a shot! Bullets left: 29
-[2025-06-03 09:56:30] Heavy Stone was hit. Hits: 1/5
-[2025-06-03 09:56:30] Heavy Stone was hit. Hits: 2/5
-[2025-06-03 09:56:30] Heavy Stone was hit. Hits: 3/5
-[2025-06-03 09:56:30] Heavy Stone was hit. Hits: 4/5
-[2025-06-03 09:56:30] Heavy Stone has broken!
-[2025-06-03 09:56:30] Heavy Stone is already broken.
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 1/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 2/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 3/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 4/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 5/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 6/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 7/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 8/10
-[2025-06-03 09:56:30] Combat Knife was hit. Hits: 9/10
-[2025-06-03 09:56:30] Combat Knife has broken!
-[2025-06-03 09:56:30] Combat Knife is already broken.
+[2025-06-04 18:51:59] Air Commando Captain attacked from the air.
+[2025-06-04 18:51:59] Sea Commando Lieutenant attacked from the sea.

@@ -1,8 +1,11 @@
-public interface IBreakable
+namespace CommandoProject.Interfaces
 {
-    string Status { get; }
-    int MaxHits { get; }
-    int CurrentHits { get; }
+    public interface IBreakable
+    {
+        string Status { get; }
+        int MaxHits { get; }
+        int CurrentHits { get; }
 
-    void Hit();
+        void Hit();
+    }
 }

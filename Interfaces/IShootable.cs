@@ -1,5 +1,8 @@
-public interface IShootable
+namespace CommandoProject.Interfaces
 {
-    int BulletCount { get; }
-    void Shoot();
+    public interface IShootable
+    {
+        int BulletCount { get; }
+        void Shoot();
+    }
 }

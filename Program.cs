@@ -1,15 +1,19 @@
-﻿using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using CommandoProject.Services;
+﻿using System;
+using CommandoProject.Entities;
 
-class Program
+namespace CommandoProject
 {
-    static async Task Main(string[] args)
+    class Program
     {
-        string[] scenarioLines = CommandoProject.Input.ScenarioLoader.LoadScenario("scenario.txt");
-        Game game = new Game(scenarioLines);
-        await game.Start();
-        await CommandoProject.Services.IntelClient.PrintIntelAsync();
+        static void Main(string[] args)
+        {
+            Console.WriteLine("🔧 Commando Operation Initialized!");
+
+            var airCommando = new AirCommando("Eagle One", "Captain");
+            var seaCommando = new SeaCommando("Shark Diver", "Lieutenant");
+
+            airCommando.Attack();
+            seaCommando.Attack();
+        }
     }
 }

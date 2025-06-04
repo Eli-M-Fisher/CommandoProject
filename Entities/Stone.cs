@@ -1,50 +1,51 @@
-
-
 using CommandoProject.Utils;
-
+using CommandoProject.Interfaces;
 using System;
 
-public class Stone : IBreakable
+namespace CommandoProject.Entities
 {
-    public string Name { get; private set; }
-    public double Weight { get; private set; }
-    public string Color { get; private set; }
-
-    public string Status { get; private set; }
-    public int MaxHits { get; private set; }
-    public int CurrentHits { get; private set; }
-
-    public Stone(string name, double weight, string color)
+    public class Stone : IBreakable
     {
-        Name = name;
-        Weight = weight;
-        Color = color;
-        MaxHits = 5;
-        CurrentHits = 0;
-        Status = "Intact";
-    }
+        public string Name { get; private set; }
+        public double Weight { get; private set; }
+        public string Color { get; private set; }
 
-    public void Hit()
-    {
-        if (Status == "Broken")
+        public string Status { get; private set; }
+        public int MaxHits { get; private set; }
+        public int CurrentHits { get; private set; }
+
+        public Stone(string name, double weight, string color)
         {
-            Console.WriteLine($"{Name} is already broken.");
-            Logger.Log($"{Name} is already broken.");
-            return;
+            Name = name;
+            Weight = weight;
+            Color = color;
+            MaxHits = 5;
+            CurrentHits = 0;
+            Status = "Intact";
         }
 
-        CurrentHits++;
+        public void Hit()
+        {
+            if (Status == "Broken")
+            {
+                Console.WriteLine($"{Name} is already broken.");
+                Logger.Log($"{Name} is already broken.");
+                return;
+            }
 
-        if (CurrentHits >= MaxHits)
-        {
-            Status = "Broken";
-            Console.WriteLine($"{Name} has broken!");
-            Logger.Log($"{Name} has broken!");
-        }
-        else
-        {
-            Console.WriteLine($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
-            Logger.Log($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
+            CurrentHits++;
+
+            if (CurrentHits >= MaxHits)
+            {
+                Status = "Broken";
+                Console.WriteLine($"{Name} has broken!");
+                Logger.Log($"{Name} has broken!");
+            }
+            else
+            {
+                Console.WriteLine($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
+                Logger.Log($"{Name} was hit. Hits: {CurrentHits}/{MaxHits}");
+            }
         }
     }
 }

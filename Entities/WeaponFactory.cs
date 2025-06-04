@@ -1,33 +1,36 @@
 using System;
 using System.Collections.Generic;
 
-public class WeaponFactory
+namespace CommandoProject.Entities
 {
-    private List<Weapon> weapons = new List<Weapon>();
-
-    public Weapon CreateWeapon(string name)
+    public class WeaponFactory
     {
-        Weapon newWeapon;
+        private List<Weapon> weapons = new List<Weapon>();
 
-        switch (name.ToLower())
+        public Weapon CreateWeapon(string name)
         {
-            case "m16":
-                newWeapon = new Weapon("M16", "Colt", 29);
-                break;
-            case "ak47":
-                newWeapon = new Weapon("AK47", "Kalashnikov", 30);
-                break;
-            default:
-                newWeapon = new Weapon("Basic Gun", "Generic", 10);
-                break;
+            Weapon newWeapon;
+
+            switch (name.ToLower())
+            {
+                case "m16":
+                    newWeapon = new Weapon("M16", "Colt", 29);
+                    break;
+                case "ak47":
+                    newWeapon = new Weapon("AK47", "Kalashnikov", 30);
+                    break;
+                default:
+                    newWeapon = new Weapon("Basic Gun", "Generic", 10);
+                    break;
+            }
+
+            weapons.Add(newWeapon);
+            return newWeapon;
         }
 
-        weapons.Add(newWeapon);
-        return newWeapon;
-    }
-
-    public List<Weapon> GetAllWeapons()
-    {
-        return weapons;
+        public List<Weapon> GetAllWeapons()
+        {
+            return weapons;
+        }
     }
 }
